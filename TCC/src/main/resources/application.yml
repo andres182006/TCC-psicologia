@@ -1,0 +1,36 @@
+api:
+  version: 1.0.0
+  tittle:   API
+  basePackage: com.Unicartagena.TCC
+  descripcion: Api para psicologia
+  Terms: https://
+
+#server configurations
+server:
+  servlet:
+    context-path: /api-notas
+    port: ${PORT:8080}
+    error:
+        include-message: always
+        include-binding-error: always
+
+#swagger-ui custom path
+springdoc:
+  api-docs:
+    path: /api-docs
+
+#Spring configs
+spring:
+  jpa:
+    defer-datasource-initialization: true
+    hibernate.ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/tcc
+    username: root
+    password: 12345678
+    driver-class-name: com.mysql.cj.jdbc.Driver
